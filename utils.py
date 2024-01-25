@@ -30,8 +30,13 @@ def roots(a, b, c):
             not (isinstance(b, int) or isinstance(b, float)) or \
             not (isinstance(c, int) or isinstance(c, float)):
         raise ValueError("Some values are not of the type float or int")
+    if a == 0:
+        if b == 0:
+            return ()
+        else:
+            return (-c/b)
     delta = b*b-4*a*c
-    if delta < 0 or (delta == 0 and a == 0 and b == 0):
+    if delta < 0:
         return ()
     elif delta > 0:
         r1 = (-b+sqrt(delta))/2*a
@@ -41,7 +46,7 @@ def roots(a, b, c):
         else:
             return (r1, r2)
     else:
-        return (0) if a == 0 else (-b/(2*a))
+        return (-b/(2*a))
 
 
 def integrate(function, lower, upper):
@@ -68,5 +73,5 @@ def integrate(function, lower, upper):
 
 if __name__ == '__main__':
     print(fact(5))
-    print(roots(1, -2, 1))
+    print(roots(0, 1, 1))
     print(integrate('x ** 2 - 1', 1, 2))
