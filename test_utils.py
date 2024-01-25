@@ -15,7 +15,7 @@ def test_fact():
 def test_roots():
     assert roots(1, 0, 0) == (0)
     assert roots(0, 0, 1) == ()
-    assert roots(0, 1, 1) == (0)
+    assert roots(0, 1, 1) == (-1)
     assert roots(0, 1, 0) == (0)
     assert roots(1, -2, 1) == (1)
     assert roots(1, 1, -6) == (2, -3) or roots(1, 1, -6) == (-3, 2)
